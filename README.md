@@ -13,7 +13,7 @@ This is a Note Blogger web app. This is a simple Node.js project that demonstrat
 
 Make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v14 or above)
+- [Node.js](https://nodejs.org/) (v22)
 - [MongoDB](https://www.mongodb.com/try/download/community) (or use MongoDB Atlas for cloud)
 
 ### Installation
