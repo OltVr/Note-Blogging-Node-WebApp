@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+  }
+  .container{
+    margin: 0 0 0 3dvw;
+  }
+  input{
+    margin-bottom: 2dvh;
+
+  }
+
+  #create{
+    background-color: #2d5077;
+    border: none;
+    border-radius: 5px;
+    color:white ;
+  }
+  
+  .sen-bold {
+    font-family: "Sen", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+  }
