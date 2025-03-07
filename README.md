@@ -24,8 +24,25 @@ Make sure you have the following installed:
    git clone https://github.com/OltVr/Note-Blogging-Node-WebApp.git
    cd Note-Blogging-Node-WebApp
    ```
-   and then run
+2. Then execute:
+   ```bash
+   npm install
+   ```
+3. And then run
    
    ```bash
    node app.js
    ```
+The app will start on port 3000 by default unless otherwise specified in the environment variable `PORT`.
+
+Also you need to have the mongodb running in the background.
+
+
+## Starting the app with Docker
+
+To start the app with docker run:
+
+```bash
+docker run oltvr/node-app
+```
+
