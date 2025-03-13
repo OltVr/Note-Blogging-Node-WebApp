@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Database connection URL (replace with your MongoDB URI)
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/notes";
 
 // Function to connect to MongoDB
 const connectDB = async () => {
