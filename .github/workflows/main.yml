@@ -1,19 +1,37 @@
-name: Deploy 
+name: Deploy to Render
 
 on:
   push:
-    branches: main
-  pull_request:
-    branches: main
+    branches:
+      - main  # Trigger the deployment on push to the 'main' branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
-        with:
-          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.MY_RENDER_API_KEY }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Change the version based on your app's requirements
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Build the app (if needed)
+      run: |
+        npm run build
+
+    - name: Deploy to Render
+      env:
+        RENDER_API_KEY: ${{ secrets.MY_RENDER_API_KEY }}  # Set this secret in your GitHub repository
+        RENDER_SERVICE_ID: ${{ secrets.MY_RENDER_SERVICE_ID }}
+      run: |
+        curl -X POST \
+        -H "Authorization: Bearer $RENDER_API_KEY" \
+        -d '{"serviceId": "$RENDER_SERVICE_ID"}' \
+        "https://api.render.com/v1/services/your-render-service-id/deploys"
