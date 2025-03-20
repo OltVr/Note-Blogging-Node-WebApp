@@ -46,3 +46,7 @@ To start the app with docker run:
 docker run oltvr/node-app
 ```
 
+# Render app
+
+You also can check the web app [here](https://note-taker-9bw9.onrender.com)
+
