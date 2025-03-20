@@ -13,19 +13,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Change the version based on your app's requirements
-
-    - name: Install dependencies
-      run: |
-        npm install
-
-    - name: Build the app (if needed)
-      run: |
-        npm run build
-
     - name: Deploy to Render
       env:
         RENDER_API_KEY: ${{ secrets.MY_RENDER_API_KEY }}  # Set this secret in your GitHub repository
