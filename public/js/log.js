@@ -66,11 +66,11 @@
 
 window.onload = function () {
     const notesList = document.getElementById('notesList');
-    notesList.innerHTML = '<p>Sorry, the note service is down for now.</p>';
+    notesList.innerHTML = '<p>Sorry, the note service is down for the foreseeable future.</p>';
 };
 
 document.getElementById('noteForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    alert('Sorry, the note service is down for now.');
+    alert('Sorry, the note service is down for the foreseeable future.');
 });
