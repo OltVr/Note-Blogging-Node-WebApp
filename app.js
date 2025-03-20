@@ -21,7 +21,7 @@ app.get('/', (req, res) =>
 app.use('/api/notes', noteRoutes);
 
 
-connectDB();
+// connectDB();
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
