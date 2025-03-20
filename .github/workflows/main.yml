@@ -13,12 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Deploy to Render
-      env:
-        RENDER_API_KEY: ${{ secrets.MY_RENDER_API_KEY }}  # Set this secret in your GitHub repository
-        RENDER_SERVICE_ID: ${{ secrets.MY_RENDER_SERVICE_ID }}
-      run: |
-        curl -X POST \
-        -H "Authorization: Bearer $RENDER_API_KEY" \
-        -d '{"serviceId": "$RENDER_SERVICE_ID"}' \
-        "https://api.render.com/v1/services/your-render-service-id/deploys"
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+        api-key: ${{ secrets.MY_RENDER_API_KEY }}
