@@ -8,9 +8,20 @@ services:
     container_name: app
     depends_on: 
     - mongodb
+    networks:
+      - db_network
   mongodb:
     image: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    
+    networks:
+      - db_network
+    volumes:
+      - db_data:/data/db
+
+volumes:
+  db_data:
+
+networks:
+  db_network:
